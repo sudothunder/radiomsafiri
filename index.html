@@ -60,12 +60,13 @@
           </li>
           
           
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="support.html">Love our work?</a></li>
         </ul><!--
         <a href="#" id="theme-toggle">
           <i class="fas fa-sun" id="theme-icon"></i>
         </nav> .navbar -->
         </a>
+        
         <i class="bi bi-list mobile-nav-toggle"></i>
         <style>
           .social-icons-container {
@@ -146,6 +147,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="fade-up">
+      
       <h1>Welcome to Radio Msafiri</h1>
       <h2>Revelation 14:6-12</h2>
       <a href="#" id="radioPlayer">
@@ -161,14 +163,15 @@
           <li></li>
           <li></li>
         </ul>
-      <span>Press to listen to live broadcast</span>
-    </a>
-    <div class="iframe-container" id="radioIframeContainer">
-      <button class="minimize-button" id="minimizeButton">Minimize</button>
-      <iframe src="https://zeno.fm/player/radiomsafiri" width="300" height="250" frameborder="0" scrolling="no"></iframe>
-      <a href="https://zeno.fm/" target="_blank" style="display: block; font-size: 0.9em; line-height: 10px;">A Zeno.FM Station</a>
+        <span>Press to listen to live broadcast</span>
+      </a>
+      <div class="iframe-container" id="radioIframeContainer">
+        <button class="minimize-button" id="minimizeButton">Minimize</button>
+        <iframe src="https://zeno.fm/player/radiomsafiri" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+        <a href="https://zeno.fm/" target="_blank" style="display: block; font-size: 0.9em; line-height: 10px;">A Zeno.FM Station</a>
+      </div>
     </div>
-</section><!-- End Hero -->
+  </section>
 <script>
   document.getElementById('radioPlayer').addEventListener('click', function(event) {
   event.preventDefault();
@@ -184,7 +187,6 @@ document.getElementById('minimizeButton').addEventListener('click', function() {
   iframeContainer.classList.remove('visible');
   body.classList.remove('blur-background');
 });
-
 </script>
 
 <main id="main">

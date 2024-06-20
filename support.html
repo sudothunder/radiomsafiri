@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="support.css">
+  <title>Support</title>
+  <style>
+    /* Loader overlay styles */
+    .loader-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #333; /* Dark grey background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999; /* Ensure it covers everything */
+    }
+
+    /* Cube styles */
+    .cube {
+      height: 80px;
+      width: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .cube_item {
+      height: 40px;
+      width: 40px;
+      border-radius: 10px;
+      transition: all 0.2s ease-in;
+    }
+
+    .cube_x {
+      background-color: blueviolet;
+      animation: animateLoaders 1s infinite;
+    }
+
+    .cube_y {
+      background-color: aqua;
+      animation: animateLoaders 1s 0.5s infinite;
+    }
+
+    @keyframes animateLoaders {
+      0% {
+        transform: scale(0.8);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(0.8);
+      }
+    }
+
+    /* Video background styles */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Place it behind the content */
+    }
+
+    /* Main content styles */
+    #mainContent {
+      text-align: center;
+      margin-top: 20px;
+      color: white; /* Ensure text is readable over video */
+      position: relative; /* Ensure content appears above the video */
+      z-index: 1; /* Ensure content is above the video and overlay */
+    }
+
+    /* Ensure the page content is readable on top of the video */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      z-index: 0; /* Place it above the video but below the content */
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-overlay" id="loaderOverlay">
+    <div class="cube">
+      <div class="cube_item cube_x"></div>
+      <div class="cube_item cube_y"></div>
+      <div class="cube_item cube_y"></div>
+      <div class="cube_item cube_x"></div>
+    </div>
+  </div>
+
+  <!-- Background video -->
+  <video class="background-video" autoplay muted loop>
+    <source src="under.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="mainContent" style="display: none;">
+    <!-- Main content goes here -->
+    <h1>Radiomsafiri</h1>
+    <p>Check back soon</p>
+    <a href="index.html" style="color: white;">Home</a> <!-- Ensure link is visible -->
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const loaderOverlay = document.getElementById('loaderOverlay');
+      const mainContent = document.getElementById('mainContent');
+
+      setTimeout(function() {
+        loaderOverlay.style.display = 'none';
+        mainContent.style.display = 'block';
+      }, 4000); // Display the loader for 4 seconds (4000ms)
+    });
+  </script>
+</body>
+</html>
